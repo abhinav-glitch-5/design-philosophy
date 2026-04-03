@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Harmonic Sanctuary | Editorial Purity in Audio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --surface: #fef8f3;
+            --surface-container-low: #f8f3ee;
+            --surface-container-lowest: #ffffff;
+            --on-surface: #1d1b19;
+            --primary: #a83822;
+            --primary-container: #f26d52;
+            --outline-variant: rgba(223, 191, 185, 0.15);
+            --tertiary: #006a64;
+        }
+
+        body {
+            background-color: var(--surface);
+            color: var(--on-surface);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .display-font {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Whisper Shadow */
+        .whisper-shadow {
+            box-shadow: 0 8px 40px 0 rgba(29, 27, 25, 0.04);
+        }
+
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(254, 248, 243, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Primary CTA Gradient */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 20px 0 rgba(168, 56, 34, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: #e6e2dd; /* surface-container-highest approx */
+            transition: transform 0.2s ease;
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.98);
+        }
+
+        /* Content Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Audio Mesh Gradient */
+        .mesh-gradient {
+            background: radial-gradient(at 0% 0%, var(--tertiary) 0%, transparent 50%),
+                        radial-gradient(at 100% 100%, var(--primary-container) 0%, transparent 50%);
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Intentional Asymmetry Grid */
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.4rem;
+        }
+
+        /* Thin Stroke Icon Simulation */
+        .icon-stroke {
+            stroke: var(--on-surface);
+            stroke-width: 1.5px;
+            fill: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl glass-nav h-16 rounded-full flex items-center justify-between px-8 whisper-shadow">
+        <div class="flex items-center gap-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" class="icon-stroke">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 8v8M8 12h8" />
+            </svg>
+            <span class="display-font font-bold text-lg">Harmonic</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+            <a href="#" class="hover:opacity-60 transition-opacity">Philosophy</a>
+            <a href="#" class="hover:opacity-60 transition-opacity">Instruments</a>
+            <a href="#" class="hover:opacity-60 transition-opacity">Journal</a>
+        </div>
+        <button class="btn-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+            Begin
+        </button>
+    </nav>
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 overflow-hidden -z-10">
+        <div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] mesh-gradient"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] mesh-gradient"></div>
+    </div>
+
+    <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+        
+        <!-- Hero Section: Intentional Asymmetry -->
+        <section class="editorial-grid min-h-[70vh] items-center mb-32">
+            <div class="col-span-12 md:col-span-7 md:col-start-2 reveal">
+                <h1 class="text-6xl md:text-8xl font-light leading-tight mb-8">
+                    Silence is the <br>
+                    <span class="italic font-medium text-[var(--primary)]">Ultimate</span> Clarity.
+                </h1>
+                <p class="text-lg md:text-xl max-w-md opacity-80 leading-relaxed mb-10 font-light">
+                    We design quiet tools for the modern mind. Experience audio as a physical presence, carved from light and matte textures.
+                </p>
+                <div class="flex gap-4">
+                    <button class="btn-primary text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-[0.1em]">
+                        Explore the Collection
+                    </button>
+                </div>
+            </div>
+            <!-- Empty space columns 10-12 create editorial tension -->
+        </section>
+
+        <!-- Product/Surface Hierarchy Section -->
+        <section class="mb-40">
+            <div class="editorial-grid gap-y-12">
+                <div class="col-span-12 md:col-span-4 reveal">
+                    <div class="bg-[var(--surface-container-low)] p-12 rounded-[2rem] h-full flex flex-col justify-between">
+                        <div>
+                            <svg class="icon-stroke mb-8" width="32" height="32" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                            <h3 class="text-2xl font-medium mb-4">Tonal Stacking</h3>
+                            <p class="opacity-70 text-sm leading-relaxed">
+                                Depth is not an effect, but a physical law. Elements are nested to indicate focus without the noise of borders.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-span-12 md:col-span-6 md:col-start-6 reveal" style="transition-delay: 0.2s;">
+                    <div class="bg-[var(--surface-container-lowest)] whisper-shadow p-12 rounded-[2rem] relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <h2 class="text-4xl font-light mb-6">The Model One</h2>
+                            <p class="opacity-70 text-base max-w-xs mb-8">
+                                A tactile frequency slider resembling vintage precision hardware. Matte polycarbonate finish.
+                            </p>
+                            <div class="w-full h-1 bg-[#e6e2dd] rounded-full relative mt-12 mb-4">
+                                <div class="absolute left-1/3 top-1/2 -translate-y-1/2 w-8 h-8 bg-[var(--surface-container-lowest)] whisper-shadow rounded-full cursor-pointer flex items-center justify-center">
+                                    <div class="w-1 h-3 bg-[var(--outline-variant)] rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-[10px] uppercase tracking-widest opacity-40 font-bold">
+                                <span>20Hz</span>
+                                <span>20kHz</span>
+                            </div>
+                        </div>
+                        <!-- Background abstract shape -->
+                        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-[var(--surface-container-low)] rounded-full group-hover:scale-110 transition-transform duration-1000"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetrical Feature Grid -->
+        <section class="editorial-grid items-start mb-40">
+            <div class="col-span-12 md:col-span-5 md:col-start-2 reveal">
+                <span class="text-[var(--primary)] font-bold text-xs uppercase tracking-widest block mb-4">Philosophy</span>
+                <h2 class="text-5xl font-light mb-8 leading-tight">Quiet, confident <br>interfacing.</h2>
+            </div>
+            
+            <div class="col-span-12 md:col-span-4 md:col-start-8 reveal space-y-16 mt-12 md:mt-0">
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm uppercase tracking-wider">No-Line Rule</h4>
+                    <p class="opacity-70 text-sm leading-relaxed">
+                        We reject the 1px divider. Clarity is achieved through background shifts and the rhythm of space.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm uppercase tracking-wider">Tactile Soul</h4>
+                    <p class="opacity-70 text-sm leading-relaxed">
+                        Digital interactions should feel physical. Every click results in a 2% compression, mimicking mechanical resistance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Visualization Mock -->
+        <section class="bg-[var(--surface-container-low)] rounded-[3rem] p-12 md:p-24 mb-40 reveal">
+            <div class="max-w-3xl">
+                <h2 class="text-4xl font-light mb-12">Atmospheric Intelligence</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div class="relative h-64 bg-[var(--surface-container-lowest)] rounded-2xl overflow-hidden p-8">
+                        <div class="absolute inset-0 mesh-gradient opacity-30"></div>
+                        <div class="relative flex flex-col h-full justify-between">
+                            <span class="text-xs font-bold opacity-40">Frequency Mesh</span>
+                            <div class="flex items-end gap-1 h-32">
+                                <div class="flex-1 bg-[var(--primary)] opacity-20 rounded-t-full" style="height: 40%"></div>
+                                <div class="flex-1 bg-[var(--primary)] opacity-40 rounded-t-full" style="height: 70%"></div>
+                                <div class="flex-1 bg-[var(--primary)] opacity-10 rounded-t-full" style="height: 30%"></div>
+                                <div class="flex-1 bg-[var(--primary)] opacity-60 rounded-t-full" style="height: 90%"></div>
+                                <div class="flex-1 bg-[var(--primary)] opacity-30 rounded-t-full" style="height: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-xl font-light leading-relaxed mb-6">
+                            Soundscapes visualized using soft, blurred meshes. Avoiding harsh grids to reduce cognitive load.
+                        </p>
+                        <a href="#" class="text-[var(--primary)] font-bold text-sm uppercase tracking-widest flex items-center gap-2 group">
+                            Learn about Adaptive EQ 
+                            <svg class="icon-stroke w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Design Guide -->
+        <section id="guide" class="mb-40 pt-20">
+            <div class="editorial-grid">
+                <!-- Title spans across, offset for asymmetry -->
+                <div class="col-span-12 md:col-span-9 md:col-start-2 mb-24 reveal">
+                    <span class="text-[var(--primary)] font-bold text-xs uppercase tracking-widest block mb-6">Documentation</span>
+                    <h2 class="text-5xl md:text-7xl font-light leading-tight">The Harmonic Sanctuary:<br>Comprehensive Design Guide</h2>
+                </div>
+
+                <!-- Main Content Column -->
+                <div class="col-span-12 md:col-span-8 md:col-start-3 space-y-32">
+                    
+                    <!-- 1. Core Philosophy -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">1. Core Philosophy & Creative North Star</h3>
+                        <p class="text-lg opacity-80 leading-relaxed mb-6">
+                            Inspired by the reductionist philosophies of Jony Ive and the functional rigor of Dieter Rams, this system rejects visual clutter. We are not just building interfaces or marketing materials; we are designing quiet, confident tools and spaces.
+                        </p>
+                        <p class="text-lg opacity-80 leading-relaxed">
+                            Whether we are developing a mobile application, a responsive website, or physical brand packaging, the visual language must be as pristine and clear as the audio we aim to provide. We achieve this through <strong>Intentional Asymmetry</strong>—using generous, uneven whitespace to guide the eye naturally—and <strong>Tonal Depth</strong>, where every touchpoint feels like a physical object carved from matte polycarbonate and warm paper.
+                        </p>
+                    </div>
+
+                    <!-- 2. Color & Surface Architecture -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">2. Color & Surface Architecture</h3>
+                        <p class="text-lg opacity-80 leading-relaxed mb-12">
+                            The palette is anchored in warm, organic off-whites, contrasted against a high-authority coral-orange that signifies action, vitality, and brand presence.
+                        </p>
+                        
+                        <h4 class="text-xl font-medium mb-6">Surface Hierarchy & Nesting</h4>
+                        <p class="text-base opacity-80 leading-relaxed mb-8">
+                            Treat all layouts (digital and physical) as a series of nested physical layers. This creates an "inner glow" effect rather than a harsh, "stuck-on" appearance.
+                        </p>
+                        
+                        <!-- Table without lines -->
+                        <div class="bg-[var(--surface-container-low)] rounded-3xl p-8 mb-12 space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-bold uppercase tracking-widest opacity-40 mb-2">
+                                <div>Layer Level</div>
+                                <div>Token / Hex</div>
+                                <div class="md:col-span-2">Usage</div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                                <div class="font-medium">Base</div>
+                                <div class="text-sm"><span class="bg-[var(--surface)] px-2 py-1 rounded shadow-sm">surface</span> <br> <span class="opacity-60">#fef8f3</span></div>
+                                <div class="md:col-span-2 text-sm opacity-80">Website backgrounds, app canvas, physical paper stock.</div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center bg-[var(--surface-container-lowest)] p-4 rounded-2xl -mx-4">
+                                <div class="font-medium">Primary Container</div>
+                                <div class="text-sm"><span class="bg-[var(--surface-container-low)] px-2 py-1 rounded border border-[var(--outline-variant)]">surface-container-low</span> <br> <span class="opacity-60">#f8f3ee</span></div>
+                                <div class="md:col-span-2 text-sm opacity-80">Article cards, form backgrounds, packaging interiors.</div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                                <div class="font-medium">Elevated/Focus</div>
+                                <div class="text-sm"><span class="bg-[var(--surface-container-lowest)] whisper-shadow px-2 py-1 rounded">surface-container-lowest</span> <br> <span class="opacity-60">#ffffff</span></div>
+                                <div class="md:col-span-2 text-sm opacity-80">Modals, floating navigation, premium print inserts.</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                            <div>
+                                <h4 class="text-xl font-medium mb-4">The "No-Line" Rule</h4>
+                                <p class="text-sm opacity-80 leading-relaxed">
+                                    The use of 1px solid borders for sectioning is strictly prohibited across all mediums. Vertical and horizontal containment must be achieved solely through background color shifts and spatial grouping.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-medium mb-4">The Glass & Gradient Rule</h4>
+                                <p class="text-sm opacity-80 leading-relaxed mb-4">
+                                    To evoke premium hardware on screens, utilize Glassmorphism for floating UI elements. Base Styling: Use <code class="bg-[var(--surface-container-lowest)] px-1 rounded text-xs">surface (#fef8f3)</code> at 80% opacity with a 20px backdrop-blur.
+                                </p>
+                                <p class="text-sm opacity-80 leading-relaxed">
+                                    <strong>Signature Textures:</strong> For primary CTAs, apply a subtle linear gradient from <code class="text-[var(--primary)]">primary</code> to <code class="text-[var(--primary-container)]">primary-container</code> at a 135° angle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Typography System -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">3. Typography System</h3>
+                        <p class="text-lg opacity-80 leading-relaxed mb-12">
+                            Our typography balances the technical, medical precision of Inter with the editorial, high-fashion elegance of Manrope.
+                        </p>
+
+                        <div class="bg-[var(--surface-container-lowest)] whisper-shadow rounded-3xl p-8 mb-8 space-y-8">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div>
+                                    <h5 class="text-xs font-bold uppercase tracking-widest opacity-40 mb-2">Statements</h5>
+                                    <div class="text-4xl display-font mb-2">Manrope</div>
+                                    <p class="text-sm opacity-80 leading-relaxed mb-2"><strong>Specs:</strong> display-lg (3.5rem+), -0.02em tracking.</p>
+                                    <p class="text-sm opacity-80 leading-relaxed"><strong>Usage:</strong> Hero headers, print billboard copy, packaging covers.</p>
+                                </div>
+                                <div class="md:col-span-2 bg-[var(--surface-container-low)] p-6 rounded-2xl flex items-center">
+                                    <span class="text-4xl md:text-5xl display-font font-light tracking-tight">Editorial Purity.</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8" style="box-shadow: 0 -2px 0 0 var(--outline-variant);">
+                                <div>
+                                    <h5 class="text-xs font-bold uppercase tracking-widest opacity-40 mb-2">Data & Prose</h5>
+                                    <div class="text-2xl font-medium mb-2">Inter</div>
+                                    <p class="text-sm opacity-80 leading-relaxed mb-2"><strong>Specs:</strong> Base size 1rem, geometric, neutral.</p>
+                                    <p class="text-sm opacity-80 leading-relaxed"><strong>Usage:</strong> Body copy, UI labels, dense data tables, manuals.</p>
+                                </div>
+                                <div class="md:col-span-2 bg-[var(--surface-container-low)] p-6 rounded-2xl flex items-center">
+                                    <p class="text-base opacity-80 leading-relaxed">The quick brown fox jumps over the lazy dog. Designed for readability in dense interfaces and manuals, maintaining high clarity at smaller point sizes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#e6e2dd] bg-opacity-30 p-6 rounded-2xl border-l-4 border-[var(--primary)]">
+                            <h4 class="text-sm font-bold uppercase tracking-widest mb-2">Accessibility Mandate</h4>
+                            <p class="text-sm opacity-80 leading-relaxed">
+                                Always maintain a minimum contrast ratio of 7:1 for body text (<code class="bg-white px-1 rounded">on-surface #1d1b19</code>) against background colors. Our system must remain inclusive and effortless to read for all users, especially those managing cognitive load.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Depth, Physics, and Materiality -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">4. Depth, Physics, and Materiality</h3>
+                        <p class="text-lg opacity-80 leading-relaxed mb-8">
+                            We do not use shadows as "styling." We treat them as "physics."
+                        </p>
+                        
+                        <div class="space-y-12">
+                            <div>
+                                <h4 class="text-xl font-medium mb-4">The Layering Principle</h4>
+                                <p class="text-base opacity-80 leading-relaxed">
+                                    Depth is achieved primarily through tonal stacking. A <code>surface-container-highest (#e6e2dd)</code> element should only exist inside a <code>surface-container (#f2ede8)</code> to indicate maximum focus or physical indentation.
+                                </p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-[var(--surface-container-low)] p-8 rounded-3xl">
+                                <div>
+                                    <h4 class="text-xl font-medium mb-4">Ambient Shadows</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed mb-4">
+                                        When an element must float above the canvas, apply a <strong>Whisper Shadow</strong>:
+                                    </p>
+                                    <ul class="text-sm opacity-80 space-y-2 font-mono bg-[var(--surface)] p-4 rounded-xl">
+                                        <li>Color: on-surface (#1d1b19) @ 4%</li>
+                                        <li>Blur: 40px | Spread: 0px</li>
+                                        <li>Offset: Y: 8px</li>
+                                    </ul>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="w-32 h-32 bg-[var(--surface-container-lowest)] rounded-2xl whisper-shadow flex items-center justify-center">
+                                        <span class="text-xs font-bold opacity-30 uppercase tracking-widest">Floating</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-xl font-medium mb-4">The "Ghost Border" Fallback</h4>
+                                <p class="text-base opacity-80 leading-relaxed">
+                                    If digital accessibility absolutely requires a container boundary, use the <code>outline-variant (#dfbfb9)</code> token at 15% opacity. This creates a "barely-there" guide that disappears into the background for neurotypical users but aids those who need distinct boundaries.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Cross-Platform Component Library -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">5. Cross-Platform Component Library</h3>
+                        
+                        <div class="space-y-16">
+                            <!-- Interactive Elements -->
+                            <div>
+                                <h4 class="text-xl font-medium mb-6">Interactive Elements (Apps & Web)</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-4">
+                                        <div class="flex items-center gap-4">
+                                            <button class="btn-primary text-white px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest">Primary</button>
+                                            <button class="btn-secondary text-[var(--on-surface)] px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest">Secondary</button>
+                                        </div>
+                                        <p class="text-sm opacity-80 leading-relaxed">
+                                            Primary buttons utilize the gradient fill and pill shape. Secondary buttons use surface-container-highest and are borderless. Micro-interactions scale elements down to 0.98.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Input Fields -->
+                            <div>
+                                <h4 class="text-xl font-medium mb-6">Input Fields & Forms</h4>
+                                <div class="bg-[var(--surface-container-low)] p-8 rounded-3xl space-y-6">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase tracking-widest opacity-40 mb-3">Email Address</label>
+                                        <input type="text" placeholder="name@domain.com" class="w-full bg-[var(--surface)] text-[var(--on-surface)] px-6 py-4 rounded-xl border-2 border-[var(--outline-variant)] focus:border-[var(--primary)] outline-none transition-colors duration-300 placeholder:opacity-30">
+                                    </div>
+                                    <p class="text-sm opacity-80 leading-relaxed">
+                                        Reject traditional borders or bottom lines. Use a subtle outline-variant ghost border that shifts to a solid primary (2px) line only upon focus.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Data Displays -->
+                            <div>
+                                <h4 class="text-xl font-medium mb-6">Data Displays & Specialized Tools</h4>
+                                <ul class="space-y-4 text-sm opacity-80 leading-relaxed list-disc list-inside marker:text-[var(--primary)]">
+                                    <li><strong>The "No-Divider" Rule:</strong> Strictly forbid 1px dividers for list items or search results. Separate content using Spacing Scale 4 (1.4rem) or alternating background tints.</li>
+                                    <li><strong>Tactile Sliders:</strong> Use a thick, tertiary-container track with a high-contrast surface-container-lowest thumb featuring a heavy ambient shadow (like a vintage Braun radio).</li>
+                                    <li><strong>Data Visualization:</strong> Avoid harsh data lines or standard bar charts. Represent soundscapes using soft, blurred gradient meshes of tertiary and primary-container.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Medium-Specific Guidelines -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">6. Medium-Specific Guidelines</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div class="bg-[var(--surface-container-low)] p-8 rounded-3xl">
+                                <h4 class="text-xl font-medium mb-4">Web & E-Commerce</h4>
+                                <ul class="space-y-4 text-sm opacity-80 leading-relaxed">
+                                    <li><strong>Grids:</strong> Utilize a 12-column fluid grid, but actively leave 2 to 3 columns empty on either the left or right to enforce the "Intentional Asymmetry" rule.</li>
+                                    <li><strong>Scroll Experience:</strong> Ensure smooth scrolling. Reveal elements with gentle fade-ins and upward micro-translations to maintain quiet, editorial pacing.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-[var(--surface-container-low)] p-8 rounded-3xl">
+                                <h4 class="text-xl font-medium mb-4">Brand Assets & Print</h4>
+                                <ul class="space-y-4 text-sm opacity-80 leading-relaxed">
+                                    <li><strong>Materials:</strong> Favor uncoated, heavy-stock papers that naturally absorb ink, mimicking our digital surface colors and matte finishes.</li>
+                                    <li><strong>Packaging:</strong> Structural design should be seamless. Minimize visible folds. Utilize debossing for logos instead of heavy foil stamping to maintain "Tonal Depth."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. The Immutable Rules -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-light mb-8 display-font text-[var(--primary)]">7. The Immutable Rules</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="bg-[var(--surface-container-lowest)] whisper-shadow p-6 rounded-2xl border-t-4 border-[var(--primary)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--primary)]">Do</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Use asymmetrical margins. A hero title might feature a left margin of spacing-8 and a right margin of spacing-20 to create sophisticated editorial tension.</p>
+                                </div>
+                                <div class="bg-[var(--surface-container-lowest)] whisper-shadow p-6 rounded-2xl border-t-4 border-[var(--primary)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--primary)]">Do</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Prioritize "Breathing Room." If you think a section needs more space, double it. Silence in design is as important as silence in audio.</p>
+                                </div>
+                                <div class="bg-[var(--surface-container-lowest)] whisper-shadow p-6 rounded-2xl border-t-4 border-[var(--primary)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3 text-[var(--primary)]">Do</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Use the primary coral sparingly. It is a beacon for critical action, not a decorative background.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="bg-[var(--surface-container-low)] p-6 rounded-2xl border-t-4 border-[var(--on-surface)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Don't</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Ever use pure black (#000000). Exclusively use on-surface (#1d1b19) for a softer, organic, and less fatiguing read.</p>
+                                </div>
+                                <div class="bg-[var(--surface-container-low)] p-6 rounded-2xl border-t-4 border-[var(--on-surface)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Don't</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Stack more than three levels of surface depth. The UI should feel like a thin sheet of glass or paper, not a deep, labyrinthine box.</p>
+                                </div>
+                                <div class="bg-[var(--surface-container-low)] p-6 rounded-2xl border-t-4 border-[var(--on-surface)]">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Don't</h4>
+                                    <p class="text-sm opacity-80 leading-relaxed">Use standard, off-the-shelf icon sets. Exclusively use custom, "thin-stroke" iconography (1.5px weight) mapped to the outline token color.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t-[var(--outline-variant)] border-opacity-10 pt-20 pb-10">
+            <div class="editorial-grid">
+                <div class="col-span-12 md:col-span-4 reveal">
+                    <div class="flex items-center gap-2 mb-8">
+                        <svg width="24" height="24" viewBox="0 0 24 24" class="icon-stroke">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 8v8M8 12h8" />
+                        </svg>
+                        <span class="display-font font-bold text-lg">Harmonic</span>
+                    </div>
+                    <p class="text-xs opacity-40 leading-loose max-w-xs">
+                        Inspired by reductionist philosophies. Designed for those who value the silence between the notes.
+                    </p>
+                </div>
+                <div class="col-span-6 md:col-span-2 md:col-start-7 reveal">
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 opacity-40">System</h5>
+                    <ul class="text-sm space-y-4 font-medium">
+                        <li><a href="#">Hardware</a></li>
+                        <li><a href="#">Interface</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-6 md:col-span-2 reveal">
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 opacity-40">Legal</h5>
+                    <ul class="text-sm space-y-4 font-medium">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Ethics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-20 text-[10px] opacity-20 uppercase tracking-[0.2em] font-bold text-center">
+                © 2024 The Harmonic Sanctuary. Designed with Purity.
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Reveal elements on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                
+                // If it's just '#' or empty, don't try to query it as a selector
+                if (targetId === '#' || targetId === '') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+
+                // Verify the selector is valid and exists
+                try {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                } catch (err) {
+                    // Fail silently or handle non-ID selectors
+                    console.warn('Smooth scroll target not found or invalid:', targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
